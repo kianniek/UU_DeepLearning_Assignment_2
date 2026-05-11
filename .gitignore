@@ -37,12 +37,8 @@ dist/
 *.egg-info/
 
 # Data
-data/raw/
-data/processed/
-*.ckpt
-*.pth
-*.pt
-*.h5
-*.hdf5
-*.npz
-*.npy
+# Ignore everything under data/ except .gitkeep and markdown files.
+data/**
+!data/**/
+!data/**/.gitkeep
+!data/**/*.md
