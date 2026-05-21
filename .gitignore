@@ -43,3 +43,6 @@ data/**
 !data/**/.gitkeep
 !data/**/*.md
 *.ini
+
+*todo*.md
+*report*.md
