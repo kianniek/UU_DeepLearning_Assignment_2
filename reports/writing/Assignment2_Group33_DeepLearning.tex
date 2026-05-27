@@ -1,0 +1,149 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Math, plots and sketches
+\usepackage{amsmath, mathtools, amsfonts, amssymb}
+\usepackage{tkz-euclide}
+\usepackage{pgfplots}
+\usepackage{verbatim}
+\pgfplotsset{compat=1.18}
+
+% Images
+\usepackage{graphicx}
+
+% Allow line-breaking URLs/paths in text
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-\do\_\do\#\do\0\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9}
+
+% Formatting
+\usepackage{dirtytalk} % Proper quotation marks
+\usepackage{float} % Placement [H]
+\usepackage{algorithmic}
+\usepackage{textcomp}
+
+% Colors for highlighting and coloring tables
+\usepackage{color, soul}
+\usepackage[table]{xcolor}
+
+% Custom labeled lists
+\usepackage{enumerate}
+
+% Clickable references
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true, 
+  urlcolor     = blue, 
+  linkcolor    = blue, 
+  citecolor    = red 
+}
+
+% Comments
+\usepackage{comment}
+\usepackage{todonotes}
+
+% References
+\usepackage{cite}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title{Magnetoencephalography (MEG) Data Classification: Intra- vs. Cross-Subject Analysis}
+
+\author{\IEEEauthorblockN{1\textsuperscript{st} Kian Niek Hamidi Abd Abad}
+\IEEEauthorblockA{\textit{Utrecht University} \\
+Utrecht, Netherlands \\
+0609927}
+\and
+\IEEEauthorblockN{2\textsuperscript{nd} Márton Mohácsi}
+\IEEEauthorblockA{\textit{Utrecht University} \\
+Utrecht, Netherlands \\
+1621106}
+\and
+\IEEEauthorblockN{3\textsuperscript{rd} Sid Pranjale}
+\IEEEauthorblockA{\textit{Utrecht University} \\
+Utrecht, Netherlands \\
+4368959}
+\and
+\IEEEauthorblockN{4\textsuperscript{th} Jorik Roebroek}
+\IEEEauthorblockA{\textit{Utrecht University} \\
+Utrecht, Netherlands \\
+9490466}
+}
+
+\maketitle
+
+\begin{abstract}
+% Briefly summarize the project goals, the MEG dataset, the deep learning architecture chosen, and the primary findings regarding intra-subject vs. cross-subject classification performance.
+Your abstract text goes here.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Deep Learning, Magnetoencephalography (MEG), Brain Decoding, Time-Series Classification
+\end{IEEEkeywords}
+
+\section{Introduction}
+% Introduce MEG data and the significance of inferring mental states from brain activity. State the goal: classifying whether a subject is in a resting, math, memory, or motor state.
+Insert introduction text here.
+
+\section{Data and Preprocessing}
+% Detail the dataset structure (248 sensors x 35624 time steps).
+% Discuss the preprocessing steps you took as suggested in the hints.
+
+\subsection{Downsampling}
+% Explain how and why you downsampled from the original 2034 Hz to improve training speed.
+
+\subsection{Scaling and Normalization}
+% Detail your min-max scaling or Z-score normalization strategy, especially focusing on time-wise scaling to adjust the 10e-15 fT magnitude.
+
+\section{Methodology}
+
+\subsection{Model Architecture (Task A)}
+% Address Task (a) here: Choose a suitable deep learning model (e.g., CNN, LSTM, or a hybrid) for classifying the MEG time-series data. Justify your choice based on the data's temporal and spatial characteristics.
+Detail your chosen deep learning model and justification here.
+
+\subsection{Hyper-parameter Selection (Task C)}
+% Address Task (c) here: Explain the choices of hyperparameters (learning rate, batch size, number of layers, etc.) and analyze their influence on the results for both classification types. How were they selected?
+Detail your hyperparameter tuning approach.
+
+\section{Experimental Setup}
+% Explain how the data was split and how you handled memory management during training (e.g., batch loading the 64 files).
+
+\subsection{Intra-Subject Classification}
+% Describe the setup for training and testing on the same subject.
+
+\subsection{Cross-Subject Classification}
+% Describe the setup for training on a set of subjects and testing on unseen subjects.
+
+\section{Results and Discussion}
+
+\subsection{Performance Comparison (Task B)}
+% Address Task (b) here: Compare the accuracy of intra-subject and cross-subject classification. Include visualizations such as bar charts or confusion matrices.
+Explain your results and the differences in accuracy.
+
+\begin{figure} [h]
+    \centering
+    %\includegraphics[width=0.8\linewidth]{results_graph.png}
+    \caption{Comparison of training and validation accuracies across Intra-Subject and Cross-Subject models.}
+    \label{fig:results_label}
+\end{figure}
+
+\subsection{Training vs. Testing Analysis (Task D)}
+% Address Task (d) here: Discuss any significant differences in training and testing accuracies (e.g., signs of overfitting, especially in cross-subject). 
+Analyze the performance gaps here.
+
+\subsection{Alternative Approaches (Task D)}
+% Address the second part of Task (d): Propose alternative models or techniques (e.g., regularization, different architectures) to improve results. Select one, implement it, and justify the choice.
+Detail your selected alternative approach and its impact on the results.
+
+\section{Conclusion}
+% Summarize the findings of your MEG classification project, the effectiveness of the chosen models, and potential future work.
+Summary of findings and future work.
+
+\nocite{*}
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
